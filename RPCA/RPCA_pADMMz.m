@@ -4,7 +4,7 @@
 % Written by: Zekun Liu (18/12/2023)
 % Reference:
 % [1] C. Zhang, Y. Song, X. Cai and D. Han. An extended proximal ADMM algorithm for three-block nonconvex optimization problems. 
-      Journal of Computational and Applied Mathematics, 398 (2021), 113681.
+%     Journal of Computational and Applied Mathematics, 398 (2021), 113681.
 % Latest Revision: 20/09/2024
 
 
