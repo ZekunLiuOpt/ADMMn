@@ -3,7 +3,7 @@
 % Output: the reconstructed sparse matrix S, low-rank matrix L, observation matrix T; relative change chg, number of iterations iter, running time
 % Written by: Zekun Liu (17/12/2023)
 % Reference:
-% [1] Z. Liu. An Extended ADMM for 3-block Nonconvex Nonseparable Problems With Applications. arXiv:2402.02193.
+% [1] Z. Liu. An Extended ADMM for 3-Block Nonconvex Nonseparable Problems With Applications. arXiv:2402.02193.
 % Latest Revision: 20/09/2024
 
 
