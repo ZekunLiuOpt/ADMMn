@@ -20,7 +20,6 @@ eps = 1e-7;
 MaxIter = 3000;
 
 tic;
-
 for k = 1 : MaxIter
 
     Lold = L;
