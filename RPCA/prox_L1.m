@@ -1,6 +1,6 @@
-% L1-regularization proximal operator
+% Solf shrinkage operator
 % Input: a given matrix X, with the parameter t
-% Output: the L1-shrink matrix Y
+% Output: the soft-shrink matrix Y
 % Written by: Zekun Liu (16/12/2023)
 % Reference:
 % [1] I. Daubechies, M. Defrise and C. D. Mol. An iterative thresholding algorithm for linear inverse problems with a sparsity constraint. 
