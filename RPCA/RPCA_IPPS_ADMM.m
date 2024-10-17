@@ -1,11 +1,28 @@
 % Existed algorithm for solving the RPCA problem
-% Input: the observation matrix M, the L1-norm parameter theta, the F-norm paramter w, the penalty parameter beta
-% Output: the reconstructed sparse matrix S, low-rank matrix L, observation matrix T; relative change chg, number of iterations iter, running time
-% Written by: Zekun Liu (17/12/2023)
+%
+% Input: 
+%         M: the observation matrix 
+%     theta: the L1-norm parameter
+%         w: the F-norm paramter
+%      beta: the penalty parameter
+%
+% Output: 
+%         S: the reconstructed sparse matrix
+%         L: the low-rank matrix
+%         T: the observation matrix
+%       chg: relative change 
+%      iter: number of iterations
+%      time: running time
+%
+% Written by Zekun Liu, 17/12/2023
+%
 % Reference:
-% [1] X. Wang, H. Shao, P. Liu and T. Wu. An Inertial Proximal Partially Symmetric ADMM-Based Algorithm for Linearly Constrained Multi-Block 
-%     Nonconvex Optimization Problems with Applications. Journal of Computational and Applied Mathematics, 420 (2023), 114821.
-% Latest Revision: 20/09/2024
+% [1] X. Wang, H. Shao, P. Liu and T. Wu. 
+%     An Inertial Proximal Partially Symmetric ADMM-Based Algorithm for 
+%     Linearly Constrained Multi-Block Nonconvex Optimization Problems with Applications. 
+%     Journal of Computational and Applied Mathematics, 420 (2023), 114821.
+%
+% Latest Revision: 17/10/2024
 
 
 function [L, S, T, chg, iter, time] = RPCA_IPPS_ADMM(M, theta, w, beta)
