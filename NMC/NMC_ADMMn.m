@@ -1,10 +1,26 @@
 % Our algorithm for solving the NMC problem
-% Input: the observation matrix M, the location matrix P, the upper bound of rank r, the F-norm paramter w, the penalty parameter beta
-% Output: the reconstructed nonnegative low-rank matrix X, Y, Z; relative change chg, number of iterations iter, running time
-% Written by: Zekun Liu (06/02/2024)
+%
+% Input: 
+%         M: the observation matrix
+%         P: the location matrix 
+%         r: the upper bound of rank
+%         w: the F-norm paramter
+%      beta: the penalty parameter
+%
+% Output: 
+%   X, Y, Z: the reconstructed nonnegative low-rank matrix 
+%       chg: relative change
+%      iter: number of iterations
+%      time: running time
+%
+% Written by Zekun Liu, 06/02/2024
+%
 % Reference:
-% [1] Z. Liu. An Extended ADMM for 3-Block Nonconvex Nonseparable Problems With Applications. arXiv:2402.02193.
-% Latest Revision: 20/09/2024
+% [1] Z. Liu. 
+%     An Extended ADMM for 3-Block Nonconvex Nonseparable Problems With Applications. 
+%     arXiv:2402.02193.
+%
+% Latest Revision: 17/10/2024
 
 
 function [X, Y, Z, chg, iter, time] = NMC_ADMMn(M, P, r, w, beta)
