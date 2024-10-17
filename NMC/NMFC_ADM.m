@@ -1,11 +1,28 @@
 % Existed algorithm for solving the NMFC problem
-% Input: the observation matrix M, the location matrix P, the upper bound of rank r, the F-norm paramters alpha and beta, the penalty parameter gamma
-% Output: the reconstructed nonnegative low-rank matrix Z, fractorization matrices X, Y, U, V; relative change chg, number of iterations iter, running time
-% Written by: Zekun Liu (19/12/2023)
+%
+% Input: 
+%          M: the observation matrix
+%          P: the location matrix 
+%          r: the upper bound of rank
+%      alpha: the F-norm paramter
+%       beta: the F-norm paramter
+%      gamma: the penalty parameter
+%
+% Output: 
+%          Z: the reconstructed nonnegative low-rank matrix 
+% X, Y, U, V: fractorization matrices
+%        chg: relative change
+%       iter: number of iterations
+%       time: running time
+%
+% Written by Zekun Liu 19/12/2023
+%
 % Reference:
-% [1] Y. Xu, W. Yin, Z. Wen and Y. Zhang. An alternating direction algorithm for matrix completion with nonnegative factors. 
+% [1] Y. Xu, W. Yin, Z. Wen and Y. Zhang. 
+%     An alternating direction algorithm for matrix completion with nonnegative factors. 
 %     Frontiers of Mathematics in China, 7 (2012), 365–384.
-% Latest Revision: 20/09/2024
+% 
+% Latest Revision: 17/10/2024
 
 
 function [X, Y, Z, U, V, chg, iter, time] = NMFC_ADM(M, P, r, alpha, beta, gamma)
