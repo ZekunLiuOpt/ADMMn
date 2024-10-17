@@ -1,12 +1,26 @@
-% Existed algorithm for solving the RPCA problem, used to record the change of the relative error during iterations
-% Input: the observation matrix M, the L1-norm parameter theta, the F-norm paramter w, the penalty parameter beta; the ground truth sparse matrix S1, low-rank
-%        matrix L1, and T1 = L1 + S1
-% Output: the change of the relative error during iterations err
-% Written by: Zekun Liu (18/12/2023)
+% Existed algorithm for solving the RPCA problem
+% used to record the change of the relative error during iterations
+%
+% Input: 
+%         M: the observation matrix
+%     theta: the L1-norm parameter
+%         w: the F-norm paramter 
+%      beta: the penalty parameter
+%        S1: the ground truth sparse matrix
+%        L1: the ground truth low-rank matrix
+%        T1: = L1 + S1
+%
+% Output: 
+%       err: the change of the relative error during iterations
+%
+% Written by Zekun Liu, 18/12/2023
+% 
 % Reference:
-% [1] C. Zhang, Y. Song, X. Cai and D. Han. An extended proximal ADMM algorithm for three-block nonconvex optimization problems. 
+% [1] C. Zhang, Y. Song, X. Cai and D. Han. 
+%     An extended proximal ADMM algorithm for three-block nonconvex optimization problems. 
 %     Journal of Computational and Applied Mathematics, 398 (2021), 113681.
-% Latest Revision: 20/09/2024
+%
+% Latest Revision: 17/10/2024
 
 
 function err = RPCA_pADMMz_ERR(M, theta, w, beta, L1, S1, T1)
