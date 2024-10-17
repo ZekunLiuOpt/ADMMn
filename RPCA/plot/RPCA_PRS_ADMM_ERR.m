@@ -1,12 +1,27 @@
-% Existed algorithm for solving the RPCA problem, used to record the change of the relative error during iterations
-% Input: the observation matrix M, the L1-norm parameter theta, the F-norm paramter w, the penalty parameter beta; the ground truth sparse matrix S1, low-rank
-%        matrix L1, and T1 = L1 + S1
-% Output: the change of the relative error during iterations err
-% Written by: Zekun Liu (18/12/2023)
+% Existed algorithm for solving the RPCA problem
+% used to record the change of the relative error during iterations
+%
+% Input: 
+%         M: the observation matrix
+%     theta: the L1-norm parameter
+%         w: the F-norm paramter 
+%      beta: the penalty parameter
+%        S1: the ground truth sparse matrix
+%        L1: the ground truth low-rank matrix
+%        T1: = L1 + S1
+%
+% Output: 
+%       err: the change of the relative error during iterations
+%
+% Written by Zekun Liu, 18/12/2023
+% 
 % Reference:
-% [1] J. Jian, P. Liu and X. Jiang. A Partially Symmetric Regularized Alternating Direction Method of Multipliers for Nonconvex Multi-block Optimization. 
+% [1] J. Jian, P. Liu and X. Jiang. 
+%     A Partially Symmetric Regularized Alternating Direction Method of Multipliers
+%     for Nonconvex Multi-block Optimization. 
 %     Acta Mathematica Sinica, Chinese Series, 64 (2021), 1005–1026.
-% Latest Revision: 20/09/2024
+% 
+% Latest Revision: 17/10/2024
 
 
 function err = RPCA_PRS_ADMM_ERR(M, theta, w, beta, L1, S1, T1)
