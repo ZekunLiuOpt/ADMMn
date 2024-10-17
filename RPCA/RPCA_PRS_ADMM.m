@@ -1,14 +1,30 @@
 % Existed algorithm for solving the RPCA problem
-% Input: the observation matrix M, the L1-norm parameter theta, the F-norm paramter w, the penalty parameter beta
-% Output: the reconstructed sparse matrix S, low-rank matrix L, observation matrix T; relative change chg, number of iterations iter, running time
-% Written by: Zekun Liu (18/12/2023)
+%
+% Input: 
+%         M: the observation matrix 
+%     theta: the L1-norm parameter
+%         w: the F-norm paramter
+%      beta: the penalty parameter
+%
+% Output: 
+%         S: the reconstructed sparse matrix
+%         L: the low-rank matrix
+%         T: the observation matrix
+%       chg: relative change 
+%      iter: number of iterations
+%      time: running time
+%
+% Written by Zekun Liu, 18/12/2023
+%
 % Reference:
-% [1] J. Jian, P. Liu and X. Jiang. A Partially Symmetric Regularized Alternating Direction Method of Multipliers for Nonconvex Multi-block Optimization. 
-%     Acta Mathematica Sinica, Chinese Series, 64 (2021), 1005–1026.
-% Latest Revision: 20/09/2024
+% [1] C. Zhang, Y. Song, X. Cai and D. Han. 
+%     An extended proximal ADMM algorithm for three-block nonconvex optimization problems. 
+%     Journal of Computational and Applied Mathematics, 398 (2021), 113681.
+%
+% Latest Revision: 17/10/2024
 
 
-function [L, S, T, chg, iter, time] = RPCA_PRS_ADMM(M, theta, w, beta)
+function [L, S, T, chg, iter, time] = RPCA_pADMMz(M, theta, w, beta)
 
 m = size(M, 1);
 n = size(M, 2);
@@ -20,9 +36,6 @@ Lam = zeros(m, n);
 eps = 1e-7;
 MaxIter = 3000;
 
-r = -0.1;
-s = 1.05;
-
 tic;
 for k = 1 : MaxIter
 
@@ -30,15 +43,15 @@ for k = 1 : MaxIter
     Sold = S;
     Told = T;
 
-    L = prox_NNfrac12((beta * (T - S) + Lam + L) / (beta + 1), 1 / (beta + 0.07)); 
-
-    S = prox_L1((beta * (T - L) + Lam + S) / (beta + 1), theta / (beta + 0.07));
-
-    Lam = Lam - r * beta * (L + S - T);
+    S = prox_L1((beta * (T - L) + Lam + S) / (beta + 1), theta / (beta + 1));
 
     T = 1 / (w + beta) * (w * M + beta * (L + S) - Lam);
 
-    Lam = Lam - s * beta * (L + S - T);
+    L = prox_NNfrac12((beta * (T - S) + Lam + L) / (beta + 1), 1 / (beta + 1));
+
+    T = 1 / (w + beta) * (w * M + beta * (L + S) - Lam);
+
+    Lam = Lam - beta * (L + S - T);
 
     chg = norm([L - Lold, S - Sold, T - Told], 'fro') / (norm([Lold, Sold, Told], 'fro') + 1);
 
