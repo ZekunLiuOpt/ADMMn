@@ -1,6 +1,8 @@
 % Experiments that comparing the performance of different algorithms on RPCA
-% Written by: Zekun Liu (18/12/2023)
-% Latest Revision: 20/09/2024
+%
+% Written by Zekun Liu, 18/12/2023
+%
+% Latest Revision: 17/10/2024
 
 
 clear
@@ -15,7 +17,7 @@ CNT = 20;
 theta = 0.1 / sqrt(p);
 w = 1e3;
 beta1 = 3.11; 
-beta2 = 7.09;   % penalty paramter for IPPS-ADMM as it suggested
+beta2 = 7.09;  % penalty paramter for IPPS-ADMM as it suggested
 
 Timesaver1 = zeros(2, 4, CNT);
 Timesaver2 = zeros(2, 4, CNT);
@@ -49,7 +51,7 @@ for i = 1:2
             S = zeros(p, n); 
             K = round(spr * p * n); 
             S(q(1:K)) = randn(K, 1);
-            sigma = 0;   % sigma = 0.01 for noisy case 
+            sigma = 0;  % sigma = 0.01 for noisy case 
             N = randn(p, n) * sigma;
             T = L + S; 
             M = T + N;
@@ -111,4 +113,3 @@ AveIter3 = mean(Itersaver3, 3);
 AveIter4 = mean(Itersaver4, 3);
 
 save test1
-load test1
