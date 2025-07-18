@@ -14,7 +14,7 @@ RANK = 0.01 * m : 0.01 * m : 0.1 * m;
 SR = [0.9, 0.7, 0.5, 0.3, 0.1];
 CNT = 20;
 
-w = 1;
+w = 1;       % also test the tuned parameters (w, beta) given in the paper for ADMMn 
 beta = 1;
 gamma = 1.618;
 
