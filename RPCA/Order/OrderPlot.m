@@ -2,7 +2,9 @@
 % 
 % Written by Zekun Liu, 18/04/2025
 %
-% Notes: 
+% Notes: RPCA_ADMMn_Order_ERR, RPCA_pADMMz_Order_ERR are similar to RPCA_pADMMz_ERR, RPCA_pADMMz_ERR, 
+%        with an additional "err" variance to record the change of relative error during iterations,
+%        hence we omit their codes for simplicity
 %
 % Latest Revision: 18/07/2025
 
