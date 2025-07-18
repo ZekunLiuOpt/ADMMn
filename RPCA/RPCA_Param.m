@@ -56,7 +56,7 @@ for i = 1:length(Theta)
             
             [L1, S1, T1, chg1, iter1, time1] = RPCA_ADMMn(M, theta, w, beta1);
             
-            [L2, S2, T2, chg2, iter2, time2] = RPCA_ADMMz(M, theta, w, beta1);
+            [L2, S2, T2, chg2, iter2, time2] = RPCA_pADMMz(M, theta, w, beta1);
             
             [L3, S3, T3, chg3, iter3, time3] = RPCA_IPPS_ADMM(M, theta, w, beta2);
 
