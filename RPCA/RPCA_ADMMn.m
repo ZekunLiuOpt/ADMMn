@@ -18,8 +18,8 @@
 %
 % Reference:
 % [1] Z. Liu. 
-%     An Extended ADMM for 3-Block Nonconvex Nonseparable Problems With Applications.
-%     arXiv:2402.02193.
+%     An Extended ADMM for 3-Block Nonconvex Nonseparable Problems with Applications.
+%     Journal of Industrial and Management Optimization, 2025, 21(9): 5876-5913.
 %
 % Latest Revision: 17/10/2024
 
